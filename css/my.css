@@ -1,18 +1,22 @@
+.main-menu{
+	margin-top:30px;
+}
+
 .login-menu {
 	list-style-type:none;  /*tiek noņemta nesakārtotā saraksta simbols pirms nosaukuma*/
 	display:inline; /* saraksts tiek atspoguļots horizontāli (pēc noklusējuma tiek atspoguļots vertikāli) */
 }
 
-
+.side-menu {
+	list-style-type:none;
+}
 header {
-	/*position:fixed;
-	width: 100%;*/
-	top:0px;
 	background-color:#1e1e2e;
 	color:#b2b2cd;
 }
 
 footer {
+	height: 30px;
 	position:fixed;
 	width: 100%;
 	bottom:0px;
@@ -27,6 +31,7 @@ body{
 }
 
 .main-content {
-
-	background-image: url("../images/planets_stars_asteroids_galaxies_59616_1920x1080.jpg");	
+	margin-bottom:30px;
+	background-image: url("../images/planets_stars_asteroids_galaxies_59616_1920x1080.jpg");
+	
 }
