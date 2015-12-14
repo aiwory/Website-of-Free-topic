@@ -1,0 +1,4 @@
+.login-menu {
+list-style-type:none;  /*tiek noņemta nesakārtotā saraksta simbols pirms nosaukuma*/
+display:inline; /* saraksts tiek atspoguļots horizontāli (pēc noklusējuma tiek atspoguļots vertikāli) */
+}
