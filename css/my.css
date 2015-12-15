@@ -35,3 +35,9 @@ body{
 	background-image: url("../images/planets_stars_asteroids_galaxies_59616_1920x1080.jpg");
 	
 }
+
+#pics img {
+
+	height:auto; 
+	width:100%;
+}
