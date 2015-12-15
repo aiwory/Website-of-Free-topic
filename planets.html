@@ -2,7 +2,7 @@
 <html lang="lv">
 <head>
 	<meta charset="UTF-8">
-	<script src="./lib/jquery-2.1.4.min.js"></script>
+	
 	<link rel="stylesheet" href="./css/html5-reset.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<!-- Latest compiled and minified CSS -->
@@ -10,11 +10,13 @@
 	<!-- Optional theme -->
 	<link rel="stylesheet" href="./lib/bootstrap-3.3.6-dist/css/bootstrap-theme.min.css">
 	<!-- Latest compiled and minified JavaScript -->
-	<script src="./lib/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+	<link href="./lib/lightbox.css" rel="stylesheet"/>
 	<link rel="stylesheet" href="./css/my.css">
 	<link rel="icon" type="icon" href="./images/favicon.ico"/>
-
+	
 	<title>Saules sistēma</title>
+
+	
 </head>
 
 <body>
@@ -51,8 +53,8 @@
 		</div>
 		<section class = "row main-content">
 			<aside class = "col-md-4">
-				<nav>
-				 	<ul class="side-menu">
+				<nav id="planet-menu" class="side-menu">
+				 	<ul>
 					  <li><a href="#planet_mercury">Merkurs</a></li>
 					  <li><a href="#planet_venus">Venēra</a></li>
 					  <li><a href="#planet_earth">Zeme</a></li>
@@ -67,42 +69,49 @@
 		</aside>
 		<main class="col-md-4">
 			<article id="planet_mercury">
-				<h1>Virsraksts1</h1>
+				<h1>Merkurs</h1>
 				<p>Teksts1</p>
 			</article>
 			<article id="planet_venus">
-				<h1>Virsraksts1</h1>
+				<h1>Venēra</h1>
 				<p>Teksts1</p>
 			</article>
 			<article id="planet_earth">
-				<h1>Virsraksts1</h1>
+				<h1>Zeme</h1>
 				<p>Teksts1</p>
 			</article>
 			<article id="planet_mars">
-				<h1>Virsraksts1</h1>
+				<h1>Marss</h1>
 				<p>Teksts1</p>
 			</article>
 			<article id="planet_jupiter">
-				<h1>Virsraksts1</h1>
+				<h1>Jupiters</h1>
 				<p>Teksts1</p>
 			</article>
 			<article id="planet_saturn">
-				<h1>Virsraksts1</h1>
+				<h1>Saturns</h1>
 				<p>Teksts1</p>
 			</article>
 			<article id="planet_uranus">
-				<h1>Virsraksts1</h1>
+				<h1>Urāns</h1>
 				<p>Teksts1</p>
 			</article>
 			<article id="planet_neptune">
-				<h1>Virsraksts1</h1>
+				<h1>Neptūns</h1>
 				<p>Teksts1</p>
 			</article>	
 			</main>
 			<aside class="col-md-4">
-			<h1  class = "hide">Reklāmas</h1>
-			b
-		</aside>
+			<h1  class = "hide">Attēli</h1>
+			<a href="images/merkurs.jpg" rel="lightbox[html]" title="Merkurs"><img src = "images/merkurs.jpg"/></a>
+			<a href="images/venera.jpg" rel="lightbox[html]" title="Venēra"><img src = "images/venera.jpg"/></a>
+			<a href="images/zeme.jpg" rel="lightbox[html]" title="Zeme"><img src = "images/zeme.jpg"/></a>
+			<a href="images/marss.jpg" rel="lightbox[html]" title="Marss"><img src = "images/marss.jpg"/></a>
+			<a href="images/jupiters.jpg" rel="lightbox[html]" title="Jupiters"><img src = "images/jupiters.jpg"/></a>
+			<a href="images/saturns.jpg" rel="lightbox[html]" title="Saturns"><img src = "images/saturns.jpg"/></a>
+			<a href="images/urans.jpg" rel="lightbox[html]" title="Urāns"><img src = "images/urans.jpg"/></a>
+			<a href="images/neptuns.jpg" rel="lightbox[html]" title="Neptūns"><img src = "images/neptuns.jpg"/></a>
+			</aside>
 		</section>
 	<div>
 	<div class = "row">
@@ -112,5 +121,9 @@
 	</footer>
 	</div>	
 </section>
+<script src="./lib/jquery-2.1.4.min.js"></script>
+<script src="./lib/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+<script type='text/javascript' src="./js/myjquerry.js"></script>
+<script src="./lib/lightbox.js"></script>
 </body>
 </html>
