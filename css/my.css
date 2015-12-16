@@ -3,11 +3,6 @@
 	font-family: Arial;
 }
 
-.login-menu {
-	list-style-type:none;  /*tiek noņemta nesakārtotā saraksta simbols pirms nosaukuma*/
-	display:inline; /* saraksts tiek atspoguļots horizontāli (pēc noklusējuma tiek atspoguļots vertikāli) */
-}
-
 .side-menu {
 	list-style-type:none;
 }
@@ -26,7 +21,7 @@ body{
 }
 
 .main-content {
-	margin-top: 50px;
+	margin-top: 70px;
 	margin-bottom:30px;
 	/*background-image: url("../images/planets_stars_asteroids_galaxies_59616_1920x1080.jpg");*/
 	
@@ -52,5 +47,17 @@ p {
 }
 
 #planet-menu li {
-	background-color:#59544f; 
+	background-color:#59544f;
+	border-radius:5px; 
+}
+
+.modal-content {
+
+	background-color: #9f9893;
+	color:#e7e5e4;
+}
+
+.item {
+	background-color: #9f9893;
+
 }

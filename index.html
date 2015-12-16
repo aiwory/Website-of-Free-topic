@@ -27,7 +27,7 @@
 				        <span class="icon-bar"></span>
 				        <span class="icon-bar"></span>                        
 				      </button>
-				      <a class="navbar-brand" href="#">Planētas</a>
+				      <a class="navbar-brand">Planētas</a>
 				    </div>
 				    <div class="collapse navbar-collapse" id="izvelne">
 				      <ul class="nav navbar-nav">
@@ -36,8 +36,8 @@
 							<li><a href="about.html">Par autoru</a></li>			
 				      </ul>
 				       <ul id="login-menu" class="nav navbar-nav pull-right">
-			 				<li class=class="btn btn-info btn-lg" data-toggle="modal" data-target="#logModal"><a href="#"><span class="glyphicon glyphicon-log-in"></span> Ieiet</a></li>
-							<li class=class="btn btn-info btn-lg" data-toggle="modal" data-target="#regModal"><a href="#"><span class="glyphicon glyphicon-user"></span> Reģistrēties</a></li>
+			 				<li data-toggle="modal" data-target="#logModal"><a href="#"><span class="glyphicon glyphicon-log-in"></span> Ieiet</a></li>
+							<li data-toggle="modal" data-target="#regModal"><a href="#"><span class="glyphicon glyphicon-user"></span> Reģistrēties</a></li>
 			 		  </ul>
 				    </div>
 				</nav>
@@ -68,20 +68,63 @@
 	</div>	
 </section>
 
-<div id="myModal" class="modal fade" role="dialog">
+<div id="logModal" class="modal fade" role="dialog">
   <div class="modal-dialog">
 
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Modal Header</h4>
+        <h4 class="modal-title">Pieslēgšanās profilā</h4>
       </div>
       <div class="modal-body">
-        <p>Some text in the modal.</p>
+         <form role="form">
+			  <div class="form-group">
+			    <label for="email">E-pasts:</label>
+			    <input type="email" class="form-control" id="email">
+			  </div>
+			  <div class="form-group">
+			    <label for="pwd">Parole:</label>
+			    <input type="password" class="form-control" id="pwd">
+			  </div>
+			  <button type="submit" class="btn btn-default">Pieslēgties</button>
+		</form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Aizvērt</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div id="regModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Reģistrācijas forma</h4>
+      </div>
+      <div class="modal-body">
+         <form role="form">
+			  <div class="form-group">
+			    <label for="email">Ievadiet e-pastu:</label>
+			    <input type="email" class="form-control" id="email">
+			  </div>
+			  <div class="form-group">
+			    <label for="pwd">ievadiet paroli:</label>
+			    <input type="password" class="form-control" id="pwd">
+			  </div>
+			  <div class="checkbox">
+			    <label><input type="checkbox"> Piekrītu noteikumiem</label>
+			  </div>
+			  <button type="submit" class="btn btn-default">Iesniegt</button>
+		</form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Aizvērt</button>
       </div>
     </div>
 
@@ -89,5 +132,6 @@
 </div>
 	<script src="./lib/jquery-2.1.4.min.js"></script>
 	<script src="./lib/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+	
 </body>
 </html>
