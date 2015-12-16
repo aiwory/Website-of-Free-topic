@@ -13,7 +13,7 @@ $(document).ready(function (){
 		var Pic=curPlanet.substr(n+1);//pievieno curplanet beigas pēc simbola "_", lai iegūtu id bildes div tagam
 		var hash ="#";//
 		var curPic=hash+Pic;//izveido id, ko padot funkcijai
-		//window.alert(curPic); 
+		//window.alert(curPic); //lietoju mainīgo testam
 		$(curPic).show();//parāda īsto bildi īstajam planētas aprakstam
 	});
 });

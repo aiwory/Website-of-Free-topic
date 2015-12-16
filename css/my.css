@@ -1,5 +1,6 @@
-.main-menu{
-	margin-top:30px;
+.jumbotron{
+	background-color:#59544f; 
+	font-family: Arial;
 }
 
 .login-menu {
@@ -10,29 +11,24 @@
 .side-menu {
 	list-style-type:none;
 }
-header {
-	background-color:#1e1e2e;
+
+footer{
+	height: 30px;
+	background-color:#5f5954;
 	color:#b2b2cd;
 }
 
-footer {
-	height: 30px;
-	position:fixed;
-	width: 100%;
-	bottom:0px;
-	background-color:#1e1e2e;
-	color:#b2b2cd;
-	text-align: right; 
-}
+
 
 body{
-	background-color:#1e1e2e;
+	background-color:black;
 	color:white;
 }
 
 .main-content {
+	margin-top: 50px;
 	margin-bottom:30px;
-	background-image: url("../images/planets_stars_asteroids_galaxies_59616_1920x1080.jpg");
+	/*background-image: url("../images/planets_stars_asteroids_galaxies_59616_1920x1080.jpg");*/
 	
 }
 
@@ -40,4 +36,21 @@ body{
 
 	height:auto; 
 	width:100%;
+}
+
+h1 {
+	text-align: center;
+}
+p {
+	text-align: justify;
+}
+
+
+
+#planet-menu a {
+	color:#c3bfbb;
+}
+
+#planet-menu li {
+	background-color:#59544f; 
 }
