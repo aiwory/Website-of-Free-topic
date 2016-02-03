@@ -9,8 +9,8 @@ $(document).ready(function (){
      tālāk li tagam, kura bērns ir zem #pagename li esošs a tags, kurā gabājas href ar saiti, kura sakrīt ar currentpage,
      piešķit klasi active
      */
-    var currentpage=location.pathname.substring(location.pathname.lastIndexOf("/") + 1);
-    if (currentpage=="") $('#pageMenu li:first').addClass('active');
-    //window.alert(currentpage);//stringa testam
-    $('#pageMenu li a[href="'+ currentpage +'"]').parents('li').addClass('active');
+    var currentPage=location.pathname.substring(location.pathname.lastIndexOf("/") + 1);
+    if (currentPage=="") $('#pageMenu li:first').addClass('active');
+    /*window.alert(currentPage);//stringa testam*/
+    $('#pageMenu li a[href="'+ currentPage +'"]').parents('li').addClass('active');
 });
