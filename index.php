@@ -3,6 +3,9 @@
 include("./class/DB_Class.php");
 include("./class/userClass.php");
 
+	$user=new userClass();
+	$user->sessionCheck();
+
 
 	$template=new template_class();
 ?>
@@ -24,16 +27,23 @@ include("./class/userClass.php");
 				?>
 			</section>
 			<section class = "row main-content">
-				<aside class = "col-md-1">
+				<aside class = "col-md-3">
+					<?php
+						if($user->getSessionStatus()==true){
+							$template->getUserpanel();
+						}
+
+					?>
 
 				</aside>
-				<main class="col-md-10 jumbotron">
+				<main class="col-md-6 jumbotron">
 					<article>
 					<h1>Saules sistēma</h1>
 					<p style="text-align:center">Šī mājaslapa satur nelielu aprakstu par katru Saules sistēmas planētu.</p>
 					</article>
 				</main>
-				<aside class="col-md-1">
+				<aside class="col-md-3">
+					<!--
 					<form role="form" action="index.php" method="post">
 						<div class="form-group">
 							<label for="usr">Ievadiet lietotājvārdu:</label>
@@ -66,13 +76,21 @@ include("./class/userClass.php");
 						<button name="save" type="submit" class="btn btn-default">Iesniegt</button>
 					</form>
 					<?php
-						if(isset($_POST['save'])){
+						/*if(isset($_POST['save'])){
 							$user = new userClass();
+							$hash = $user->convertPassword($_POST['userPw']);
+							echo $hash;
+							if (password_verify('qwerty', $hash)) {
+							echo 'Password is valid!';
+							} else {
+								echo 'Invalid password.';
+							}
 							$user->insertUser($_POST['userNickname'], $_POST['userMail'],
-								$_POST['userPw'], $_POST['userName'], $_POST['userSurname'], $_POST['sex']);
+								$hash, $_POST['userName'], $_POST['userSurname'], $_POST['sex']);
 						}
-
+						*/
 					?>
+					-->
 				</aside>
 			</section>
 

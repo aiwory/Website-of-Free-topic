@@ -1,6 +1,11 @@
 <?php
-	include("./class/template.php");
-	$template=new template_class();
+include("./class/template.php");
+include("./class/DB_Class.php");
+include("./class/userClass.php");
+$user=new userClass();
+$user->sessionCheck();
+
+$template=new template_class();
 ?>
 
 <!DOCTYPE html>

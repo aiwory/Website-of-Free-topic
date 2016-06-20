@@ -1,6 +1,11 @@
 <?php
-	include("./class/template.php");
-	$template=new template_class();
+include("./class/template.php");
+include("./class/DB_Class.php");
+include("./class/userClass.php");
+$user=new userClass();
+$user->sessionCheck();
+
+$template=new template_class();
 ?>
 
 <!DOCTYPE html>
@@ -21,7 +26,11 @@
 				?>
 			</section>
 			<section class = "row main-content">
-				<aside class = "col-md-2">
+				<aside class = "col-md-3">
+					<?php
+					if($user->getSessionStatus()==true) $template->getUserpanel();
+
+					?>
 					<nav id="planet-menu" class="side-menu">
 						<ul class="nav nav-pills nav-stacked">
 						  <li><a href="#planet_mercury">Merkurs</a></li>
@@ -36,7 +45,7 @@
 					</nav>
 				</aside>
 
-				<main class="col-md-7 jumbotron">
+				<main class="col-md-6 jumbotron">
 					<article id="planet_mercury">
 						<h1>Merkurs</h1>
 						<p>Merkurs ir Saulei tuvākā un mazākā Saules sistēmas planēta. Merkurs apriņķo Sauli 88 dienās, tā arī ir planēta ar lielāko orbītas ekscentritāti. Merkuram nav pavadoņu. Merkurs ir arī mazāks par Saules sistēmas lielākajiem pavadoņiem - Jupitera pavadoni Ganimēdu un Saturna pavadoni Titānu. Merkurs pie debesīm ir salīdzinoši spožs, taču dēļ mazā attāluma no Saules, to ir grūti novērot Saules spožuma dēļ - vislabāk Merkurs saskatāms agros rītos vai vēlos vakaros - pirms saullēkta vai pēc saulrieta. Salīdzinot ar citām Saules sistēmas planētām par Merkuru ir zināms salīdzinoši maz - to pētījis tikai viens zinātniskais aparāts (otrs pašlaik vēl ir ceļā) un ar teleskopiem no Zemes iespējams novērot tikai apgaismoto Merkura daļu. Merkurs bijis zināms arī senajām kultūrām - agrākās dokumentētas ziņas par Merkura novērojumiem datējas ar pirmo gadu tūkstoti pirms mūsu ēras.</p>

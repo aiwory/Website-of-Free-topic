@@ -29,6 +29,7 @@ class template_class
         echo'<script src="./lib/jquery-2.1.4.min.js"></script>
 		<script src="./lib/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
 		<script src="./js/commentary.js"></script>
+		<script src="./js/modal.js"></script>
 		<script type="text/javascript" src="./js/mainmenu.js"></script>
 		<script type="text/javascript" src="./js/submenu.js"></script>
 		<script src="./lib/lightbox.js"></script>';
@@ -51,9 +52,13 @@ class template_class
 					        <li><a href="planets">Saules sistēma</a></li>
 							<li><a href="about">Par autoru</a></li>
 				      </ul>
-				       <ul id="login-menu" class="nav navbar-nav pull-right">
-			 				<li data-toggle="modal" data-target="#logModal"><a href="#"><span class="glyphicon glyphicon-log-in"></span> Ieiet</a></li>
-							<li data-toggle="modal" data-target="#regModal"><a href="#"><span class="glyphicon glyphicon-user"></span> Reģistrēties</a></li>
+				       <ul id="login-menu" class="nav navbar-nav pull-right">';
+                        if(!isset($_SESSION['username'])) {
+                            echo '<li data-toggle="modal" data-target="#logModal" id="log-modal-button"><a href="#"><span class="glyphicon glyphicon-log-in"></span> Ieiet</a></li>';
+                            echo '<li data-toggle="modal" data-target="#regModal" id="reg-modal-button"><a href="#"><span class="glyphicon glyphicon-user"></span> Reģistrēties</a></li>';
+                        }
+							else echo'<li id="exit-button"><a href="#"><span class="glyphicon glyphicon-log-out"></span> Iziet</a></li>';
+        echo'
 			 		  </ul>
 				    </div>
 				</nav>
@@ -85,36 +90,33 @@ class template_class
                         <h4 class="modal-title">Reģistrācijas forma</h4>
                       </div>
                       <div class="modal-body">
-                         <form role="form">
+                         <form role="form" id="register-form">
                               <div class="form-group">
                                 <label for="usr">Ievadiet lietotājvārdu:</label>
-                                <input type="text" class="form-control" id="usr">
+                                <input type="text" class="form-control" id="reg-usr">
                               </div>
                               <div class="form-group">
                                 <label for="email">Ievadiet e-pastu:</label>
-                                <input type="email" class="form-control" id="email">
+                                <input type="email" class="form-control" id="reg-email">
                               </div>
                               <div class="form-group">
                                 <label for="pwd">ievadiet paroli:</label>
-                                <input type="password" class="form-control" id="pwd">
+                                <input type="password" class="form-control" id="reg-pwd">
                               </div>
 
                               <div class="form-group">
                                 <label for="name">Ievadiet savu vārdu:</label>
-                                <input type="text" class="form-control" id="name">
+                                <input type="text" class="form-control" id="reg-name">
                               </div>
                               <div class="form-group">
                                 <label for="surname">Ievadiet savu uzvārdu:</label>
-                                <input type="text" class="form-control" id="surname">
+                                <input type="text" class="form-control" id="reg-surname">
                               </div>
-                              <div class="checkbox">
                               <div class="radio">
-                                <label class="radio-inline"><input type="radio" name="sex">Vīrietis</label>
-                                <label class="radio-inline"><input type="radio" name="sex">Sieviete</label>
-                              </div>
-                                <label><input type="checkbox"> Piekrītu noteikumiem</label>
-                              </div>
-                              <button type="submit" class="btn btn-default">Iesniegt</button>
+                                <label class="radio-inline"><input type="radio" name="reg-sex" value="m">Vīrietis</label>
+                                <label class="radio-inline"><input type="radio" name="reg-sex" value="f">Sieviete</label>
+								</div>
+                              <button type="submit" class="btn btn-default" data-dismiss="modal" id="reguser">Iesniegt</button>
                         </form>
                       </div>
                       <div class="modal-footer">
@@ -139,16 +141,16 @@ class template_class
                               <h4 class="modal-title">Pieslēgšanās profilā</h4>
                           </div>
                           <div class="modal-body">
-                              <form role="form">
+                              <form role="form" id ="login-form">
                                   <div class="form-group">
                                       <label for="email">E-pasts:</label>
-                                      <input type="email" class="form-control" id="email">
+                                      <input type="email" class="form-control" id="log-email">
                                   </div>
                                   <div class="form-group">
                                       <label for="pwd">Parole:</label>
-                                      <input type="password" class="form-control" id="pwd">
+                                      <input type="password" class="form-control" id="log-pwd">
                                   </div>
-                                  <button type="submit" class="btn btn-default">Pieslēgties</button>
+                                  <button type="submit" class="btn btn-default" data-dismiss="modal" id="loguser">Pieslēgties</button>
                               </form>
                           </div>
                           <div class="modal-footer">
@@ -157,6 +159,23 @@ class template_class
                       </div>
                   </div>
               </div>';
+
+    }
+
+    function getUserpanel(){
+
+        if($_SESSION["gender"]=="f") $greeting = "Sveicināta ";
+        else $greeting = "Sveicināts ";
+        echo "<div class=\"well\">
+                    <p><h3 style=\"color: yellow\">{$greeting}{$_SESSION['username']}</h3></p>
+					<p><b>Vārds: {$_SESSION['name']}</b></p>
+					<p><b>Uzvards: {$_SESSION['surname']}</b></p>
+        </div>";
+
+
+
+
+
 
 
     }
